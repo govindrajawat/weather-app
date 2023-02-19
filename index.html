@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Weather-app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body translate="no">
+    <div class="dark-button">
+        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+        </svg>
+    </div>
+    <div class="app">
+        <div class="container__form choose">
+            <form action="#">
+                <div>
+                    <input type="radio" name="Live Location" id="live">
+                    <label for="live">Live Location</label>
+                </div>
+                <div>
+                    <input type="radio" name="City" id="city">
+                    <label for="city">City</label>
+                </div>
+                <div>
+                    <input type="radio" name="Pincode" id="pincode">
+                    <label for="pincode">Pincode</label>
+                </div>
+                <div>
+                    <input type="radio" name="State" id="state">
+                    <label for="state">State</label>
+                </div>
+                <div>
+                    <input type="radio" name="Country" id="country">
+                    <label for="country">Country</label>
+                </div>
+            </form>
+        </div>
+        <div class="container__form result">
+            <form action="#" class="form">
+                <h3>Wind Speed</h3>
+                <h3>Temperature</h3>
+                <h3>Min Temperature</h3>
+                <h3>Max Temperature</h3>
+                <h3>Feels Like</h3>
+                <h3>Humidity</h3>
+                <h3>Clouds</h3>
+                <h3>Location</h3>
+            </form>
+        </div>
+
+        <!-- Overlay -->
+        <div class="container__overlay">
+            <div class="overlay">
+                <div class="overlay__panel overlay--right">
+                    <button class="btn" id="signUp">Show Weather</button>
+                </div>
+                <div class="overlay__panel">
+                    <button class="btn" id="signIn">Change Location</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

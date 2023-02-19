@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --app-bg: rgba(16 18 27 / 40%);
+  --theme-color: #f9fafb;
+  --btn-bg: #21242d;
+  --gray: #333;
+  --blue: #0367a6;
+}
+.light-mode {
+  --app-bg: rgba(65, 65, 65, 0.479);
+  --theme-color: #000000;
+  --btn-bg: #f7f7f7;
+  --blue:#009afa;
+}
+
+.dark-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--btn-bg);
+  box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  border-radius: 50%;
+  z-index: 999;
+  cursor: pointer;
+}
+.dark-button svg {
+  width: 25px;
+  flex-shrink: 0;
+  fill: #ffce45;
+  stroke: #ffce45;
+  transition: 2s;
+}
+.light-mode .dark-button svg {
+  fill: transparent;
+  stroke: var(--theme-color);
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: url(https://4kwallpapers.com/images/wallpapers/macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-5120x2880-1432.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+  min-height: 100vh;
+  overflow: hidden;
+}
+body.light-mode:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.72) 0%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+  -webkit-backdrop-filter: saturate(3);
+  backdrop-filter: saturate(3);
+}
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0.8em;
+  }
+}
+.app {
+  background-color: var(--app-bg);
+  border-radius: 14px;
+  width: 100%;
+  height: 90vh;
+  max-width: 750px;
+  max-height: 500px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+    align-items: center;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+}
+
+
+.container__form {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	transition: all 0.6s ease-in-out;
+}
+
+.choose {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.container.swap .choose {
+	transform: translateX(100%);
+	opacity: 0;
+}
+
+.result {
+	left: 50%;
+	z-index: 1;
+}
+
+.container.swap .result {
+	transform: translateX(100%);
+	opacity: 1;
+}
+
+.container__overlay {
+	height: 100%;
+	left: 50%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	transition: 0.6s ease-in-out;
+	width: 50%;
+	z-index: 100;
+}
+
+.app.swap .container__overlay {
+	transform: translateX(-100%);
+}
+
+.overlay {
+	background: url("https://4kwallpapers.com/images/wallpapers/macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-5120x2880-1432.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	height: 100%;
+	left: -100%;
+	position: relative;
+	transition: 0.6s ease-in-out;
+	width: 200%;
+}
+
+.app.swap .overlay {
+	transform: translateX(50%);
+}
+
+.overlay__panel {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: absolute;
+	height: 100%;
+	width: 50%;
+}
+
+.overlay--right {
+	right: 0;
+}
+
+.btn {
+	background-color: var(--blue);
+	border-radius: 20px;
+	border: 1px solid var(--blue);
+	color: var(--theme-color);
+	cursor: pointer;
+	font-size: 0.8rem;
+	padding: 0.9rem 2rem;
+}
