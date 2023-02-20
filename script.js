@@ -1,15 +1,29 @@
-let toggleButton = document.querySelector('.dark-button');
-toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
+
+
+// let button = document.getElementById('button');
+// button.addEventListener('click', () => {
+//     let input = document.getElementById('input').value;
+//     let url = `https://api.teleport.org/api/urban_areas/slug:${input}/images/`;
+//     fetch(url)
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log(data);
+//             let image = data.photos[0].image.web;
+//             let imageContainer = document.getElementById('image-container');
+//             imageContainer.innerHTML = `<img src="${image}" alt="image">`;
+//         })
+//         .catch(err => console.log(err));
+// });
+
+let liveBtn = document.getElementById('live-btn');
+liveBtn.addEventListener('click', () => {
+  navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position);
+      lon = position.coords.longitude;
+      lat = position.coords.latitude;
+      }
+  );
 });
-
-// navigator.geolocation.getCurrentPosition((position) => {
-//     console.log(position);
-//     lon = position.coords.longitude;
-//     lat = position.coords.latitude;
-//     }
-// );
-
 
 
 
@@ -23,11 +37,12 @@ toggleButton.addEventListener('click', () => {
 
 // fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Gwalior', options)
 // 	.then(response => response.json())
-// 	.then(response => {console.log(response)})
+// 	.then(response => {console.log(response)
+//   temp.innerHTML = response.temp;
+      
+//   })
 // 	.catch(err => console.error(err));
 
-
-// https://api.teleport.org/api/urban_areas/slug:seattle/images/
 
 
 let signInBtn = document.getElementById("signIn");
@@ -38,4 +53,10 @@ signInBtn.addEventListener("click", () => {
 });
 signUpBtn.addEventListener("click", () => {
   app.classList.add("swap");
+});
+
+let temp = document.getElementById('temp');
+let toggleButton = document.querySelector('.dark-button');
+toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
 });
