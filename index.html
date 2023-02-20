@@ -20,7 +20,6 @@
                 <div>
                     <label for="city">City</label>
                     <input type="text" name="loc" id="city">
-                    <span class="optional">(optional)</span>
                 </div>
                 <div>
                     <label for="pincode">Pincode</label>
@@ -43,18 +42,34 @@
             </form>
         </div>
         <div class="container__form result">
-            <form action="#" class="form">
-                <div class="temp"><span id="temp">1</span>
+            <form action="#" class="form2">
+                <div class="temp"><span id="temp"></span>
                     <h3>°C</h3>
                 </div>
-                <h3>Wind Speed</h3>
-
-                <h3>Min Temperature</h3><span id="min"></span>
-                <h3>Max Temperature</h3><span id="max"></span>
-                <h3>Feels Like</h3><span id="feels"></span>
-                <h3>Humidity</h3><span id="hum"></span>
-                <h3>Clouds</h3><span id="cloud"></span>
-                <h3>Location</h3><span id="location"></span>
+                <div class="wind">
+                    <h3>Wind Speed:&nbsp;&nbsp;</h3><span id="wind"></span>
+                    <h2>m/h</h2>
+                </div>
+                <div class="min">
+                    <h3>Min Temperature:&nbsp;&nbsp;</h3><span id="min"></span>
+                    <h2>°C</h2>
+                </div>
+                <div class="max">
+                    <h3>Max Temperature:&nbsp;&nbsp;</h3><span id="max"></span>
+                    <h2>°C</h2>
+                </div>
+                <div class="feels">
+                    <h3>Feels Like:&nbsp;&nbsp;</h3><span id="feels"></span>
+                    <h2>°C</h2>
+                </div>
+                <div class="humidity">
+                    <h3>Humidity:&nbsp;&nbsp;</h3><span id="humidity"></span>
+                    <h2>%</h2>
+                </div>
+                <div class="cloud">
+                    <h3>Clouds:&nbsp;&nbsp;</h3><span id="cloud"></span>
+                    <h2>%</h2>
+                </div>
             </form>
         </div>
 
@@ -62,10 +77,10 @@
         <div class="container__overlay">
             <div class="overlay">
                 <div class="overlay__panel overlay--right">
-                    <button class="btn" id="signUp">Show Weather</button>
+                    <button class="btn" id="showWeather">Show Weather</button>
                 </div>
                 <div class="overlay__panel">
-                    <button class="btn" id="signIn">Change Location</button>
+                    <button class="btn" id="changeLocation">Change Location</button>
                 </div>
             </div>
         </div>

@@ -18,6 +18,7 @@
   --theme-color: #000000;
   --btn-bg: #f7f7f7;
   --blue: #009afa;
+  --gray: #cacaca;
 }
 
 .dark-button {
@@ -54,6 +55,7 @@ body {
   padding: 2em;
   min-height: 100vh;
   overflow: hidden;
+  -webkit-user-select: none;
 }
 body.light-mode:before {
   content: "";
@@ -191,7 +193,7 @@ body.light-mode:before {
   color: var(--theme-color);
   font-size: 2em;
   font-weight: 900;
-  margin-bottom: 0.2em;
+  margin: 0.5em;
     display: flex;
   justify-content: center;
   align-items: center;
@@ -201,8 +203,8 @@ body.light-mode:before {
   padding: 0.4em 0.6em;
   border-radius: 10px;
   border: 1px solid var(--gray);
-  background-color: var(--theme-color);
-  color: var(--btn-bg);
+  background-color: var(--gray);
+  color: var(--theme-color);
   font-size: 1.2em;
   text-align: center;
   margin: 0.5em auto 0.2em auto;
@@ -228,11 +230,33 @@ body.light-mode:before {
 
 
 /* result css */
-.form .temp {
+.form2{
+  padding: 4vw;
+  margin: 10px;
+  color: var(--theme-color);  
+}
+  
+.form2 .temp {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 0.6em;
   font-size: 3em;
   font-weight: 600;
+}
+.form2 div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form2 span{
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+/* size */
+@media screen and (max-width: 540px) {
+  .form2 {
+    padding: 0vw;
+  }
 }
